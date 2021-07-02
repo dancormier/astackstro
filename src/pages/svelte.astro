@@ -3,10 +3,11 @@ import CounterReact from '../components/CounterReact.jsx';
 import CounterSvelte from '../components/CounterSvelte.svelte';
 import CounterVue from '../components/CounterVue.vue';
 import Page from '../components/Page.jsx';
-import Button from '../components/react/Button.jsx';
+import ButtonSvelte from '../components/svelte/Button.svelte';
+import ButtonBadgeSvelte from '../components/svelte/ButtonBadge.svelte';
 
 let variableExample = '<=== look';
-let dank = false;
+let darkMode = false;
 
 ---
 
@@ -30,10 +31,13 @@ let dank = false;
     </style>
 </head>
 <body>
-    <Page:visible selectedNavIndex={0}>
-        <h2 class="fs-display1">React components</h2>
-        <p class="fs-body1">Below are React buttons.</p>
-        <Button:visible variant="primary">This is a React Button</Button:visible>
+    <Page:visible selectedNavIndex={1}>
+        <h2 class="fs-display1">Svelte components</h2>
+        <p class="fs-body1">Below are Svelte buttons in a React container! Nifty!</p>
+        <ButtonSvelte variant="primary">
+            I'm a svelte button
+            <ButtonBadgeSvelte number={1234} />
+        </ButtonSvelte>
     </Page:visible>
 </body>
 </html>
