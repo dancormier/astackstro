@@ -22,7 +22,6 @@ const navItems = [
 ]
 
 export default function Nav ({ handleDarkMode, selectedIndex }) {
-  console.log({handleDarkMode})
   return (
     <View as="nav" className="bg-black-050 bb bc-black-100 p16">
       <View className="d-flex jc-space-between mx-auto wmx12 w100">

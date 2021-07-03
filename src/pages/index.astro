@@ -1,13 +1,11 @@
 ---
-import CounterReact from '../components/CounterReact.jsx';
-import CounterSvelte from '../components/CounterSvelte.svelte';
-import CounterVue from '../components/CounterVue.vue';
 import Page from '../components/Page.jsx';
 import Button from '../components/react/Button.jsx';
+import Badges from '../components/react/Badges.jsx';
+import View from '../components/react/View.jsx';
 
-let variableExample = '<=== look';
-let dank = false;
-
+const badges = await fetch('https://api.stackexchange.com/2.3/badges?order=desc&sort=rank&site=stackoverflow')
+    .then((res) => res.json());
 ---
 
 <!doctype html>
@@ -15,25 +13,22 @@ let dank = false;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Astro</title>
+    <title>Reastacksrto</title>
 
     <link rel="icon" type="image/svg+xml" href="https://stackoverflow.design/assets/img/favicons/favicon.ico">
     <link rel="stylesheet" href="https://unpkg.com/@stackoverflow/stacks/dist/css/stacks.min.css">
-
-    <style>
-        /* header {
-            display: flex;
-            flex-direction: column;
-            gap: 1em;
-            max-width: min(100%, 68ch);
-        } */
-    </style>
 </head>
 <body>
     <Page:visible selectedNavIndex={0}>
-        <h2 class="fs-display1">React components</h2>
-        <p class="fs-body1">Below are React buttons.</p>
-        <Button:visible variant="primary">This is a React Button</Button:visible>
+        <View>
+            <h2 class="fs-display1">React components</h2>
+            <p class="fs-body1">Below are React buttons.</p>
+            <Button variant="primary">This is a React Button</Button>
+        </View>
+        <View className="mt24">
+            <h2 class="fs-headline1">Enjoy these badges rendered with React</h2>
+            <Badges badges={badges} />
+        </View>
     </Page:visible>
 </body>
 </html>

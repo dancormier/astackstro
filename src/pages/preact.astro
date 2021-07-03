@@ -1,0 +1,30 @@
+---
+import Page from '../components/Page.jsx';
+import Button from '../components/preact/Button.jsx';
+import View from '../components/preact/View.jsx';
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prestackstro</title>
+
+    <link rel="icon" type="image/svg+xml" href="https://stackoverflow.design/assets/img/favicons/favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/@stackoverflow/stacks/dist/css/stacks.min.css">
+</head>
+<body>
+    <Page:visible selectedNavIndex={2}>
+        <View>
+            <h2 class="fs-display1">Preact components</h2>
+            <p class="fs-body1">Below is a Preact button.</p>
+            <Button variant="primary">This is a Preact Button 👋</Button>
+        </View>
+        <View className="mt24">
+            <h2 class="fs-headline1">Enjoy these badges rendered with Vue</h2>
+            <p>Coming soon!</p>
+        </View>
+    </Page:visible>
+</body>
+</html>

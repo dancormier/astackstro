@@ -20,6 +20,7 @@ export default function Page({ children, darkMode, selectedNavIndex = 0 }) {
           <View
             className="
               flex--item
+              fl-shrink0
               overflow-y-scroll
               overflow-x-hidden
               bg-white
@@ -36,7 +37,7 @@ export default function Page({ children, darkMode, selectedNavIndex = 0 }) {
               <Sidenav />
           </View>
           <View as="main" className="fl-grow1 ps-relative pl48 md:pl24 sm:pl16 sm:pr16">{children}</View>
-          <View className="ml32 sm:d-none print:d-none">
+          <View className="fl-shrink0 ml32 sm:d-none print:d-none">
             We could put a ToC here 🤔
           </View>
         </View>

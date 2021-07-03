@@ -1,14 +1,11 @@
 ---
-import CounterReact from '../components/CounterReact.jsx';
-import CounterSvelte from '../components/CounterSvelte.svelte';
-import CounterVue from '../components/CounterVue.vue';
 import Page from '../components/Page.jsx';
 import ButtonSvelte from '../components/svelte/Button.svelte';
 import ButtonBadgeSvelte from '../components/svelte/ButtonBadge.svelte';
+import BadgesSvelte from '../components/svelte/Badges.svelte';
 
-let variableExample = '<=== look';
-let darkMode = false;
-
+const badges = await fetch('https://api.stackexchange.com/2.3/badges?page=2&order=desc&sort=rank&site=stackoverflow')
+    .then((res) => res.json());
 ---
 
 <!doctype html>
@@ -16,28 +13,26 @@ let darkMode = false;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Astro</title>
+    <title>Astracksvrolte</title>
 
     <link rel="icon" type="image/svg+xml" href="https://stackoverflow.design/assets/img/favicons/favicon.ico">
     <link rel="stylesheet" href="https://unpkg.com/@stackoverflow/stacks/dist/css/stacks.min.css">
 
-    <style>
-        /* header {
-            display: flex;
-            flex-direction: column;
-            gap: 1em;
-            max-width: min(100%, 68ch);
-        } */
-    </style>
 </head>
 <body>
     <Page:visible selectedNavIndex={1}>
-        <h2 class="fs-display1">Svelte components</h2>
-        <p class="fs-body1">Below are Svelte buttons in a React container! Nifty!</p>
-        <ButtonSvelte variant="primary">
-            I'm a svelte button
-            <ButtonBadgeSvelte number={1234} />
-        </ButtonSvelte>
+        <div>
+            <h2 class="fs-display1">Svelte components</h2>
+            <p class="fs-body1">Below are Svelte buttons in a React container! Nifty!</p>
+            <ButtonSvelte variant="primary">
+                I'm a svelte button
+                <ButtonBadgeSvelte number={1234} />
+            </ButtonSvelte>
+        </div>
+        <div class="mt24">
+            <h2 class="fs-headline1">Enjoy these badges rendered with Svelte</h2>
+            <BadgesSvelte badges={badges?.items} />
+        </div>
     </Page:visible>
 </body>
 </html>

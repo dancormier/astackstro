@@ -1,0 +1,29 @@
+---
+import Page from '../components/Page.jsx';
+import Button from '../components/vue/Button.vue';
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vuestrackstro</title>
+
+    <link rel="icon" type="image/svg+xml" href="https://stackoverflow.design/assets/img/favicons/favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/@stackoverflow/stacks/dist/css/stacks.min.css">
+</head>
+<body>
+    <Page:visible selectedNavIndex={3}>
+        <div>
+            <h2 class="fs-display1">Vue components</h2>
+            <p class="fs-body1">Below is a Vue button.</p>
+            <Button variant="primary">This is a Vue Button 👋</Button>
+        </div>
+        <div class="mt24">
+            <h2 class="fs-headline1">Enjoy these badges rendered with Vue</h2>
+            <p>Coming soon!</p>
+        </div>
+    </Page:visible>
+</body>
+</html>

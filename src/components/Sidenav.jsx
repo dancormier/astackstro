@@ -99,7 +99,7 @@ export default function Header () {
     <Navigation layout="vertical">
       {navItems.map(group => {
         return (
-          <div key={group.title}>
+          <div key={group.title} className="mb16">
             <NavigationTitle>{group.title}</NavigationTitle>
             {group.items.map(item => {
               return (
