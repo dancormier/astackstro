@@ -1,6 +1,6 @@
 ---
 import Page from '../components/Page.jsx';
-import Button from '../components/vue/Button.vue';
+import Avatar from '../components/vue/Avatar.vue';
 ---
 
 <!doctype html>
@@ -8,22 +8,21 @@ import Button from '../components/vue/Button.vue';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vuestrackstro</title>
-
+    <title>Stacks Vue - Avatar</title>
     <link rel="icon" type="image/svg+xml" href="https://stackoverflow.design/assets/img/favicons/favicon.ico">
     <link rel="stylesheet" href="https://unpkg.com/@stackoverflow/stacks/dist/css/stacks.min.css">
 </head>
 <body>
     <Page:visible selectedNavIndex={3}>
-        <div>
-            <h2 class="fs-display1">Vue components</h2>
-            <p class="fs-body1">Below is a Vue button.</p>
-            <Button variant="primary">This is a Vue Button 👋</Button>
-        </div>
-        <div class="mt24">
-            <h2 class="fs-headline1">Enjoy these badges rendered with Vue</h2>
-            <p>Coming soon!</p>
-        </div>
+        <h2 class="fs-display1">Avatars</h2>
+        <p class="fs-body2">Below are avatars built with Vue.</p>
+        <Avatar:visible src="https://picsum.photos/32" />
+        <Avatar:visible src="https://picsum.photos/48" size={24} />
+        <Avatar:visible src="https://picsum.photos/64" size={32} />
+        <Avatar:visible src="https://picsum.photos/96" size={48} />
+        <Avatar:visible src="https://picsum.photos/128" size={64} />
+        <Avatar:visible src="https://picsum.photos/192" size={96} />
+        <Avatar:visible src="https://picsum.photos/256" size={128} />
     </Page:visible>
 </body>
 </html>

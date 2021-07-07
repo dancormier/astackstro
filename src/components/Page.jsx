@@ -1,9 +1,10 @@
 import React from 'react';
 import Nav from './Nav';
+import Contents from './Contents';
 import Sidenav from './Sidenav';
 import View from './react/View';
 
-export default function Page({ children, darkMode, selectedNavIndex = 0 }) {
+export default function Page({ children, selectedNavIndex = 0, selectedSection }) {
   const toggleDark = React.useCallback(() => {
     if (document.body.className.indexOf('theme-dark') > -1) {
         document.body.className = 'theme-system';
@@ -14,9 +15,9 @@ export default function Page({ children, darkMode, selectedNavIndex = 0 }) {
 
   return (
     <View>
-      <View as="main" className="d-flex fd-column overflow-hidden" style={{ maxHeight: '100vh' }}>
+      <View as="main" className="d-flex fd-column" style={{ maxHeight: '100vh' }}>
         <Nav handleDarkMode={toggleDark} selectedIndex={selectedNavIndex} />
-        <View className="d-flex fl-grow1 mx-auto py24 overflow-hidden wmx12 w100">
+        <View className="d-flex fl-grow1 fs-body3 mx-auto py24 wmx12 w100">
           <View
             className="
               flex--item
@@ -34,11 +35,11 @@ export default function Page({ children, darkMode, selectedNavIndex = 0 }) {
               sm:w100
             "
           >
-              <Sidenav />
+              <Sidenav selected={selectedSection} />
           </View>
           <View as="main" className="fl-grow1 ps-relative pl48 md:pl24 sm:pl16 sm:pr16">{children}</View>
           <View className="fl-shrink0 ml32 sm:d-none print:d-none">
-            We could put a ToC here 🤔
+            <Contents />
           </View>
         </View>
       </View>

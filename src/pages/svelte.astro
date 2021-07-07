@@ -1,11 +1,6 @@
 ---
 import Page from '../components/Page.jsx';
-import ButtonSvelte from '../components/svelte/Button.svelte';
-import ButtonBadgeSvelte from '../components/svelte/ButtonBadge.svelte';
-import BadgesSvelte from '../components/svelte/Badges.svelte';
-
-const badges = await fetch('https://api.stackexchange.com/2.3/badges?page=2&order=desc&sort=rank&site=stackoverflow')
-    .then((res) => res.json());
+import Avatar from '../components/svelte/Avatar.svelte';
 ---
 
 <!doctype html>
@@ -13,26 +8,21 @@ const badges = await fetch('https://api.stackexchange.com/2.3/badges?page=2&orde
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Astracksvrolte</title>
-
+    <title>Stacks Svelte - Avatar</title>
     <link rel="icon" type="image/svg+xml" href="https://stackoverflow.design/assets/img/favicons/favicon.ico">
     <link rel="stylesheet" href="https://unpkg.com/@stackoverflow/stacks/dist/css/stacks.min.css">
-
 </head>
 <body>
     <Page:visible selectedNavIndex={1}>
-        <div>
-            <h2 class="fs-display1">Svelte components</h2>
-            <p class="fs-body1">Below are Svelte buttons in a React container! Nifty!</p>
-            <ButtonSvelte variant="primary">
-                I'm a svelte button
-                <ButtonBadgeSvelte number={1234} />
-            </ButtonSvelte>
-        </div>
-        <div class="mt24">
-            <h2 class="fs-headline1">Enjoy these badges rendered with Svelte</h2>
-            <BadgesSvelte badges={badges?.items} />
-        </div>
+        <h2 class="fs-display1">Avatars</h2>
+        <p class="fs-body2">Below are avatars built with Svelte.</p>
+        <Avatar:visible src="https://picsum.photos/32" />
+        <Avatar:visible src="https://picsum.photos/48" size={24} />
+        <Avatar:visible src="https://picsum.photos/64" size={32} />
+        <Avatar:visible src="https://picsum.photos/96" size={48} />
+        <Avatar:visible src="https://picsum.photos/128" size={64} />
+        <Avatar:visible src="https://picsum.photos/192" size={96} />
+        <Avatar:visible src="https://picsum.photos/256" size={128} />
     </Page:visible>
 </body>
 </html>

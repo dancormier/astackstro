@@ -1,0 +1,71 @@
+---
+import { Markdown, Prism } from 'astro/components';
+import Layout from '../layouts/Component.astro';
+import Tabs from '../components/Tabs.jsx';
+import Navigation from '../components/react/Avatar.jsx';
+import AvatarReact from '../components/react/Avatar.jsx';
+import AvatarPreact from '../components/preact/Avatar.jsx';
+import AvatarSvelte from '../components/svelte/Avatar.svelte';
+import AvatarVue from '../components/vue/Avatar.vue';
+
+let title = 'Avatars';
+---
+<Layout:visible title={title}>
+    <h2 class="fs-display1">{title}</h2>
+    <p>Avatars are used to quickly identify users or teams.</p>
+
+    <div class="mb32">
+        <Tabs />
+        <AvatarReact:visible src="https://picsum.photos/32" />
+        <AvatarReact:visible src="https://picsum.photos/48" size={24} />
+        <AvatarReact:visible src="https://picsum.photos/64" size={32} />
+        <AvatarReact:visible src="https://picsum.photos/96" size={48} />
+        <AvatarReact:visible src="https://picsum.photos/128" size={64} />
+        <AvatarReact:visible src="https://picsum.photos/192" size={96} />
+        <AvatarReact:visible src="https://picsum.photos/256" size={128} />
+    </div>
+    <Markdown>
+        ### Example
+        ```jsx
+        import { Avatar } from '@stackoverflow/stacks-components';
+        <Avatar.react src="https://picsum.photos/256" size={128} />
+        ```
+    </Markdown>
+    <div class="mb32 mt64">
+        <h2 class="fs-headline1">Preact</h2>
+        <AvatarPreact:visible src="https://picsum.photos/32" />
+        <AvatarPreact:visible src="https://picsum.photos/48" size={24} />
+        <AvatarPreact:visible src="https://picsum.photos/64" size={32} />
+        <AvatarPreact:visible src="https://picsum.photos/96" size={48} />
+        <AvatarPreact:visible src="https://picsum.photos/128" size={64} />
+        <AvatarPreact:visible src="https://picsum.photos/192" size={96} />
+        <AvatarPreact:visible src="https://picsum.photos/256" size={128} />
+    </div>
+    <Markdown>
+        ### Example
+        ```jsx
+        import { Avatar } from '@stackoverflow/stacks-components';
+        <Avatar.preact src="https://picsum.photos/256" size={128} />
+        ```
+    </Markdown>
+    <div class="mt64">
+        <h2 class="fs-headline1">Svelte</h2>
+        <AvatarSvelte:visible src="https://picsum.photos/32" />
+        <AvatarSvelte:visible src="https://picsum.photos/48" size={24} />
+        <AvatarSvelte:visible src="https://picsum.photos/64" size={32} />
+        <AvatarSvelte:visible src="https://picsum.photos/96" size={48} />
+        <AvatarSvelte:visible src="https://picsum.photos/128" size={64} />
+        <AvatarSvelte:visible src="https://picsum.photos/192" size={96} />
+        <AvatarSvelte:visible src="https://picsum.photos/256" size={128} />
+    </div>
+    <div class="mt64">
+        <h2 class="fs-headline1">Vue</h2>
+        <AvatarVue:visible src="https://picsum.photos/32" />
+        <AvatarVue:visible src="https://picsum.photos/48" size={24} />
+        <AvatarVue:visible src="https://picsum.photos/64" size={32} />
+        <AvatarVue:visible src="https://picsum.photos/96" size={48} />
+        <AvatarVue:visible src="https://picsum.photos/128" size={64} />
+        <AvatarVue:visible src="https://picsum.photos/192" size={96} />
+        <AvatarVue:visible src="https://picsum.photos/256" size={128} />
+    </div>
+</Layout:visible>
