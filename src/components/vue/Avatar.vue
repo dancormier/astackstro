@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: "AvatarVue",
+  name: "Avatar",
   props: {
     size: Number,
     src: String,

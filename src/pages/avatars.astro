@@ -1,13 +1,18 @@
 ---
-import { Markdown, Prism } from 'astro/components';
+// import { Markdown, Prism } from 'astro/components';
+import { getValue } from 'nanostores';
+import { avatarProps } from '../store/avatar.js';
+import { getDefaultValues } from '../util.js'
 import Layout from '../layouts/Component.astro';
 import Tabs from '../components/Tabs.jsx';
-import Navigation from '../components/react/Avatar.jsx';
 import Playground from '../components/demo/AvatarPlayground.jsx';
 import AvatarReact from '../components/demo/AvatarReact.jsx';
 import AvatarPreact from '../components/demo/AvatarPreact.jsx';
-import AvatarSvelte from '../components/svelte/Avatar.svelte';
+import AvatarSvelte from '../components/demo/AvatarSvelte.svelte';
 import AvatarVue from '../components/vue/Avatar.vue';
+
+const storeProps = getValue(avatarProps);
+const propValues = getDefaultValues(storeProps);
 
 let title = 'Avatars';
 ---
@@ -21,6 +26,24 @@ let title = 'Avatars';
         <Tabs:load />
         <AvatarReact:load />
         <AvatarPreact:load />
+        <AvatarSvelte:load />
+        <div class="d-flex jc-space-between">
+            <div class="ps-relative">
+                <h3 class="fs-heading1 mt16">Vue*</h3>
+                <AvatarVue:visible alt={propValues.alt} size={propValues.size} src={propValues.src}/>
+                <p class="fc-black-500 fs-fine mt16 ps-absolute t100 l0">
+                    *I'm faking this one.<br/>See <a href="https://github.com/snowpackjs/astro/issues/182">astro issue #182</a>.
+                </p>
+            </div>
+            <div>
+                <h3 class="fs-title mt16">Static (image)</h3>
+                <AvatarVue:visible alt="demo image" size={64} src="https://picsum.photos/128#vue" />
+            </div>
+            <div>
+            <h3 class="fs-title mt16">Static (letter)</h3>
+                <AvatarVue:visible letter="v" size={32} className="bg-red-500" />
+            </div>
+        </div>
     </div>
     <!-- <Markdown>
         ### Example
@@ -29,42 +52,5 @@ let title = 'Avatars';
 
         <Avatar.react src="https://picsum.photos/256" size={128} />
         ```
-    </Markdown>
-    <div class="mb32 mt64">
-        <h2 class="fs-headline1">Preact</h2>
-        <AvatarPreact:visible src="https://picsum.photos/32#preact" />
-        <AvatarPreact:visible src="https://picsum.photos/48#preact" size={24} />
-        <AvatarPreact:visible src="https://picsum.photos/64#preact" size={32} />
-        <AvatarPreact:visible src="https://picsum.photos/96#preact" size={48} />
-        <AvatarPreact:visible src="https://picsum.photos/128" size={64} />
-        <AvatarPreact:visible src="https://picsum.photos/192" size={96} />
-        <AvatarPreact:visible src="https://picsum.photos/256" size={128} />
-    </div>
-    <Markdown>
-        ### Example
-        ```jsx
-        import { Avatar } from '@stackoverflow/stacks-components';
-        <Avatar.preact src="https://picsum.photos/256" size={128} />
-        ```
-    </Markdown>
-    <div class="mt64">
-        <h2 class="fs-headline1">Svelte</h2>
-        <AvatarSvelte:visible src="https://picsum.photos/32" />
-        <AvatarSvelte:visible src="https://picsum.photos/48" size={24} />
-        <AvatarSvelte:visible src="https://picsum.photos/64" size={32} />
-        <AvatarSvelte:visible src="https://picsum.photos/96" size={48} />
-        <AvatarSvelte:visible src="https://picsum.photos/128" size={64} />
-        <AvatarSvelte:visible src="https://picsum.photos/192" size={96} />
-        <AvatarSvelte:visible src="https://picsum.photos/256" size={128} />
-    </div>
-    <div class="mt64">
-        <h2 class="fs-headline1">Vue</h2>
-        <AvatarVue:visible src="https://picsum.photos/32" />
-        <AvatarVue:visible src="https://picsum.photos/48" size={24} />
-        <AvatarVue:visible src="https://picsum.photos/64" size={32} />
-        <AvatarVue:visible src="https://picsum.photos/96" size={48} />
-        <AvatarVue:visible src="https://picsum.photos/128" size={64} />
-        <AvatarVue:visible src="https://picsum.photos/192" size={96} />
-        <AvatarVue:visible src="https://picsum.photos/256" size={128} />
-    </div> -->
+    </Markdown> -->
 </Layout:visible>
