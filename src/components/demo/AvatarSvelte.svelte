@@ -9,7 +9,7 @@
   const staticImage = {
     alt: "demo image",
     size: 64,
-    src: "https://picsum.photos/128#svelte"
+    src: "https://pbs.twimg.com/profile_images/1121395911849062400/7exmJEg4_400x400.png"
   }
   const staticLetter = {
     className: "bg-red-500",

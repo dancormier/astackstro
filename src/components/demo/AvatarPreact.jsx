@@ -9,11 +9,14 @@ const Avatars = () => {
   const propValues = getDefaultValues(props);
   const staticImage = {
     alt: "demo image",
+    className: "bg-black-800",
+    href: "https://preactjs.com/",
     size: 64,
     src: "https://picsum.photos/128#preact"
   }
   const staticLetter = {
     className: "bg-powder-500",
+    href: "https://preactjs.com/",
     letter: "p",
     size: 32,
   }

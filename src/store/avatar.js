@@ -8,7 +8,7 @@ const avatarProps = createStore(() => {
     },
     as: {
       'data-description': 'HTML tag',
-      defaultValue: 'div',
+      defaultValue: 'a',
       disabled: true,
     },
     children: {
@@ -18,6 +18,10 @@ const avatarProps = createStore(() => {
     className: {
       'data-description': 'Add classes to the component',
       defaultValue: '',
+    },
+    href: {
+      'data-description': 'Link to user/team profile',
+      defaultValue: 'https://stackoverflow.com/users/3',
     },
     letter: {
       'data-description': 'A single character for displaying an abbreviated Team name',

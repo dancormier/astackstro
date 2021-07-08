@@ -1,16 +1,17 @@
 <template>
-  <div
+  <a
     class="s-avatar"
     v-bind:class="[
       size ? 's-avatar__' + size : 16,
       className
     ]"
     {...rest}
+    v-bind:href="href"
   >
     <div class="s-avatar--letter" v-if="letter">{{letter}}</div>
     <img class="s-avatar--image" v-if="src" v-bind:alt="alt" v-bind:src="src" />
     <slot></slot>
-  </div>
+  </a>
 </template>
 
 <script>
@@ -22,6 +23,7 @@ export default {
     alt: String,
     letter: String,
     className: String,
+    href: String,
   },
 };
 </script>

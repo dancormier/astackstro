@@ -8,12 +8,15 @@ const Avatars = () => {
   const props = useStore(avatarProps);
   const propValues = getDefaultValues(props);
   const staticImage = {
-    alt: "demo image",
+    alt: "React demo image",
+    className: "bg-black-800",
+    href: "https://reactjs.org/",
     size: 64,
-    src: "https://picsum.photos/128#react"
+    src: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
   }
   const staticLetter = {
     className: "bg-blue-500",
+    href: "https://reactjs.org/",
     letter: "r",
     size: 32,
   }
