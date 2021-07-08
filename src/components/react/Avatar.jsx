@@ -25,8 +25,11 @@ const Avatar = ({
   ...rest
 }) => (
   <View className={`s-avatar s-avatar__${size} ${className}`} {...rest}>
-    {letter ? <div className="s-avatar--letter">{letter}</div> : ''}
-    {src ? <img className="s-avatar--image" src={src} alt={alt} /> : ''}
+    {letter ? (
+      <div className="s-avatar--letter">{letter}</div>
+    ) : (
+      <img className="s-avatar--image" src={src} alt={alt} />
+    )}
     {children}
   </View>
 );

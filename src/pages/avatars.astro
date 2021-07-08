@@ -3,8 +3,9 @@ import { Markdown, Prism } from 'astro/components';
 import Layout from '../layouts/Component.astro';
 import Tabs from '../components/Tabs.jsx';
 import Navigation from '../components/react/Avatar.jsx';
-import AvatarReact from '../components/react/Avatar.jsx';
-import AvatarPreact from '../components/preact/Avatar.jsx';
+import Playground from '../components/demo/AvatarPlayground.jsx';
+import AvatarReact from '../components/demo/AvatarReact.jsx';
+import AvatarPreact from '../components/demo/AvatarPreact.jsx';
 import AvatarSvelte from '../components/svelte/Avatar.svelte';
 import AvatarVue from '../components/vue/Avatar.vue';
 
@@ -15,28 +16,26 @@ let title = 'Avatars';
     <p>Avatars are used to quickly identify users or teams.</p>
 
     <div class="mb32">
-        <Tabs />
-        <AvatarReact:visible src="https://picsum.photos/32" />
-        <AvatarReact:visible src="https://picsum.photos/48" size={24} />
-        <AvatarReact:visible src="https://picsum.photos/64" size={32} />
-        <AvatarReact:visible src="https://picsum.photos/96" size={48} />
-        <AvatarReact:visible src="https://picsum.photos/128" size={64} />
-        <AvatarReact:visible src="https://picsum.photos/192" size={96} />
-        <AvatarReact:visible src="https://picsum.photos/256" size={128} />
+        <Playground:load />
+        <h3 class="fs-heading2">Examples</h3>
+        <Tabs:load />
+        <AvatarReact:load />
+        <AvatarPreact:load />
     </div>
-    <Markdown>
+    <!-- <Markdown>
         ### Example
         ```jsx
         import { Avatar } from '@stackoverflow/stacks-components';
+
         <Avatar.react src="https://picsum.photos/256" size={128} />
         ```
     </Markdown>
     <div class="mb32 mt64">
         <h2 class="fs-headline1">Preact</h2>
-        <AvatarPreact:visible src="https://picsum.photos/32" />
-        <AvatarPreact:visible src="https://picsum.photos/48" size={24} />
-        <AvatarPreact:visible src="https://picsum.photos/64" size={32} />
-        <AvatarPreact:visible src="https://picsum.photos/96" size={48} />
+        <AvatarPreact:visible src="https://picsum.photos/32#preact" />
+        <AvatarPreact:visible src="https://picsum.photos/48#preact" size={24} />
+        <AvatarPreact:visible src="https://picsum.photos/64#preact" size={32} />
+        <AvatarPreact:visible src="https://picsum.photos/96#preact" size={48} />
         <AvatarPreact:visible src="https://picsum.photos/128" size={64} />
         <AvatarPreact:visible src="https://picsum.photos/192" size={96} />
         <AvatarPreact:visible src="https://picsum.photos/256" size={128} />
@@ -67,5 +66,5 @@ let title = 'Avatars';
         <AvatarVue:visible src="https://picsum.photos/128" size={64} />
         <AvatarVue:visible src="https://picsum.photos/192" size={96} />
         <AvatarVue:visible src="https://picsum.photos/256" size={128} />
-    </div>
+    </div> -->
 </Layout:visible>
