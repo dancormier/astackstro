@@ -1,5 +1,5 @@
 ---
-// import { Markdown, Prism } from 'astro/components';
+import { Markdown, Prism } from 'astro/components';
 import { getValue } from 'nanostores';
 import { avatarProps } from '../store/avatar.js';
 import { getDefaultValues } from '../util.js'
@@ -31,7 +31,7 @@ let title = 'Avatars';
             <div class="ps-relative">
                 <h3 class="fs-heading1 mt16">Vue*</h3>
                 <AvatarVue:visible alt={propValues.alt} size={propValues.size} src={propValues.src}/>
-                <p class="fc-black-500 fs-fine mt16 ps-absolute t100 l0">
+                <p class="fc-black-500 fs-fine mt16">
                     *I'm faking this one.<br/>See <a href="https://github.com/snowpackjs/astro/issues/182">astro issue #182</a>.
                 </p>
             </div>
@@ -45,12 +45,12 @@ let title = 'Avatars';
             </div>
         </div>
     </div>
-    <!-- <Markdown>
+    <Markdown>
         ### Example
         ```jsx
         import { Avatar } from '@stackoverflow/stacks-components';
 
         <Avatar.react src="https://picsum.photos/256" size={128} />
         ```
-    </Markdown> -->
+    </Markdown>
 </Layout:visible>

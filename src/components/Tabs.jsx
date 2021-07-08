@@ -25,6 +25,7 @@ const Tabs = () => {
   const active = useStore(activeTab);
 
   return (
+    <>
       <Navigation className="fs-fine">
         {tabs.map(tab => {
           return (
@@ -39,6 +40,32 @@ const Tabs = () => {
           );
         })}
       </Navigation>
+      {active === tabs[0].label ? (
+        <div>
+          {tabs[0].label}
+        </div>
+      ) : ''}
+      {active === tabs[1].label ? (
+        <div>
+          {tabs[1].label}
+        </div>
+      ) : ''}
+      {active === tabs[2].label ? (
+        <div>
+          {tabs[2].label}
+        </div>
+      ) : ''}
+      {active === tabs[3].label ? (
+        <div>
+          {tabs[3].label}
+        </div>
+      ) : ''}
+      {active === tabs[4].label ? (
+        <div>
+          {tabs[4].label}
+        </div>
+      ) : ''}
+    </>
   )
 }
 
