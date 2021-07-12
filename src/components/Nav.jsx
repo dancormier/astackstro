@@ -29,7 +29,8 @@ export default function Nav ({ handleDarkMode, selectedIndex }) {
           <View as="li" className="as-center mx16">
             <Icon name="LogoGlyph" native />
           </View>
-          {navItems.map((item, i) => {
+          <View className="fs-headline2">🧰</View>
+          {/* {navItems.map((item, i) => {
             return (
               <li key={item.href}>
                   <NavigationItem
@@ -40,7 +41,7 @@ export default function Nav ({ handleDarkMode, selectedIndex }) {
                   </NavigationItem>
               </li>
             )
-          })}
+          })} */}
         </Navigation>
         <Button
           variant="unset"
