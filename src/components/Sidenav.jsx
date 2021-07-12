@@ -109,7 +109,7 @@ export default function SideNav ({ selected }) {
                 <NavigationItem
                   key={item}
                   className={item === selected ? 'is-selected' : ''}
-                  href={item.toLowerCase().replaceAll(' ', '-')}
+                  href={item.toLowerCase().replace(/ /g, '-')}
                 >
                   {item}
                 </NavigationItem>

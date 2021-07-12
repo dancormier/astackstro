@@ -7,7 +7,7 @@ const Icon = ({ name = 'LogoGlyphSm', native }) => {
 
   React.useEffect(() => {
     if (native) {
-      setStacksIcon(Icons[name].replaceAll('svg-icon ', 'svg-icon native '));
+      setStacksIcon(Icons[name].replace(/svg-icon /g, 'svg-icon native '));
     }
   }, [name, native]);
 
