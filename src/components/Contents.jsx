@@ -26,11 +26,11 @@ export default function ContentsNav () {
           <div key={group.title} className="mb16">
             <NavigationItem href={`#${group.title}`}>{group.title}</NavigationItem>
             {group.items.map((item, i) => {
-              console.log(i)
               return (
                 <NavigationItem
                   key={item}
-                  href={`#${item}`}
+                  href="#"
+                  // href={`#${item}`}
                   className={item === selected ? 'fc-theme-primary' : ''}
                 >
                   {item}
